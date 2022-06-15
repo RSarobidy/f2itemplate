@@ -50,7 +50,7 @@
             required>
         </div>
       </div>
-      <button type="submit" class="col-md-2 offset-md-10 btn btn-primary">M'inscrire</button>
+        <button type="submit" class="col-md-2 offset-md-10 btn btn-primary">M'inscrire</button>
     </form>
   </div>
 

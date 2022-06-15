@@ -86,4 +86,4 @@ if ($insert == false) {
   die()
 }
 
-header('Location: http://localhost/index1.php');
+header('Location: http://localhost/index.php');
