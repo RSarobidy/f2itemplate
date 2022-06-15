@@ -44,7 +44,26 @@ class Database {
     }
   }
 
-  public static function Insert() {
-    return;
+  public static function Insert($table = null, $data = null) {
+  
+    $db = Database::ConnectDb();
+   
+    try {
+      if ($table == null) {
+        return false;
+      }
+      // selectionne la table
+      $sql = "INSERT INTO ".$table ." (firstname, lastname, date, password, email, phone) VALUES (?, ?, ?, ?, ?, ?)";
+      if ($table != null && $data != null) {
+        $sth = $db->prepare($sql);
+        $sth->execute($data);
+        return $sth;
+      } else{
+        return false;
+      }
+
+   
+    } catch (PDOException $e) {
+      return false;
   }
 }

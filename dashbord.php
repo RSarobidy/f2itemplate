@@ -70,3 +70,20 @@ if (count($email) > 0) {
 $newPassword = password_hash($mdp1, PASSWORD_ARGON2ID);
 
 var_dump($newPassword);
+
+// Pour vérifier si les données ont bien été insérer
+$insert = Database::Insert('user',[
+  $nom,
+  $prenom,
+  $date,
+  $newPassword,
+  $email,
+  $phone
+]);
+
+if ($insert == false) {
+  echo "un probleme a eu lieu lors de l'insertion";
+  die()
+}
+
+header('Location: http://localhost/index1.php');
